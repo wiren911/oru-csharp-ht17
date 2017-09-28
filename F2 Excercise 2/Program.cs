@@ -4,18 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace F2_Excercise_1
+namespace F2_Excercise_2
 {
+
     class Program
     {
         /// <summary>
-        /// 1. Skapa en sträng-ihopslagare!
-        /// 2. Avsluta om "quit"
+        /// Skapa en enkel kalkylator
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            
+            Console.WriteLine("Welcome! Let me calculate something.");
+
         }
     }
 }
