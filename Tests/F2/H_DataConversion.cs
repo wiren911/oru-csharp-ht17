@@ -10,10 +10,10 @@ public class DataConversionTests
         var date = new DateTime(2000, 01, 01);
         var formatedDate = date.ToString("yyyy-MM-dd");
         Assert.AreEqual("2000-01-01", formatedDate);
-
-        var pi = Math.PI;
-        var formatedPi = pi.ToString("C");
-        Assert.AreEqual("3,14 kr", formatedPi);
+        
+        Assert.AreEqual("15,99 kr", 15.99m.ToString("C"));
+        Assert.AreEqual("100,00 %", 1.ToString("P"));
+        Assert.AreEqual("1 000 000", 1000000.ToString("n0"));
     }
 
     [TestMethod]
