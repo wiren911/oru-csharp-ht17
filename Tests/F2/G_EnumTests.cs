@@ -34,12 +34,20 @@ public class EnumTests
     [TestMethod]
     public void flags_enum()
     {
-        var amanuens = Role.Student | Role.Teacher;
+        Role amanuens = Role.Student | Role.Teacher;
         Assert.AreEqual(3, (int)amanuens);
 
         Assert.AreEqual(true, amanuens.HasFlag(Role.Student));
 
         var johan = Role.Teacher | Role.GuestTeacher;
         Assert.AreEqual(6, (int)johan);        
+    }
+
+    [TestMethod]
+    public void parse()
+    {
+        Enum.TryParse<Role>("Student", out var result);
+
+        Assert.AreEqual(Role.Student, result);
     }
 }

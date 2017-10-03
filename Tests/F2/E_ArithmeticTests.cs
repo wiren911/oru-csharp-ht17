@@ -13,7 +13,7 @@ namespace Tests.F2
         [TestMethod]
         public void addition()
         {
-            var added = 1 + 2;
+            int added = 1 + 2;
             Assert.AreEqual(3, added);
 
             var subtracted = 1 - 2;

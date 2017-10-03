@@ -17,6 +17,7 @@ namespace UnitTestProject1
         {
             int daysInWeek = 7;
         }
+
         [TestMethod]
         public void declare_and_initialize_with_var()
         {

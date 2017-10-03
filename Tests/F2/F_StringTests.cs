@@ -1,4 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
+
 [TestClass]
 public class StringTests
 {
@@ -30,6 +32,14 @@ public class StringTests
         var pathWithEscapeChars = "c:\\hej\r\n";
 
         Assert.AreEqual(pathWithVerbatim, pathWithEscapeChars);
+    }
+
+    [TestMethod]
+    public void string_interpolation()
+    {
+        var result = $"År: {DateTime.Now.Year}, Månad: {DateTime.Now.Month}";
+
+        Assert.AreEqual("År: 2017, Månad: 10", result);
     }
 
     // LIVE-Time
