@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Tests.F2
 {
-    [Microsoft.VisualStudio.TestTools.UnitTesting.TestClass]
+    [TestClass]
     public class ArithmeticTests
     {
         [TestMethod]

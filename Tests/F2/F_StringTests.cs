@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-[Microsoft.VisualStudio.TestTools.UnitTesting.TestClass]
+[TestClass]
 public class StringTests
 {
     [TestMethod]

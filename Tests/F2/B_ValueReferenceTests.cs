@@ -29,8 +29,7 @@ namespace UnitTestProject1
 
             Assert.AreEqual(true, secondSumArray[0]);
         }
-
-
+        
         [TestMethod]
         public void referenceTypes()
         {

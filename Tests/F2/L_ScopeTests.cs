@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-[Microsoft.VisualStudio.TestTools.UnitTesting.TestClass]
+[TestClass]
 public class ScopeTests
 {
     private bool _canAccessClassScope = true;
@@ -29,6 +29,4 @@ public class ScopeTests
         }
         //Assert.AreEqual(true, canAccessBlockScope); // Error
     }
-
-
 }
