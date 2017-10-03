@@ -25,7 +25,7 @@ namespace Tests.F2
             var divided = 10 / 2;
             Assert.AreEqual(5, divided);
 
-            var modulus = 3 / 2;
+            var modulus = 3 % 2;
             Assert.AreEqual(1, modulus);
         }
 
@@ -39,8 +39,7 @@ namespace Tests.F2
             value--;
             Assert.AreEqual(0, value);
         }
-
-
+        
         [TestMethod]
         public void assignment_operators()
         {
