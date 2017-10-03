@@ -8,6 +8,8 @@ public class CollectionsTest
     [TestMethod]
     public void init()
     {
+        // Generic: går att specificera n antal GenericArguments (typer) för att 
+        // få bättre typsäkerhet
         List<string> declareWithoutInit;
         var declareAndInit = new List<string>();
 
@@ -107,6 +109,8 @@ public class CollectionsTest
     [TestMethod]
     public void untyped()
     {
+        // Pre .NET Framework 2
+        // Osäkert och mycket konvertering mellan datatyper.
         var untypedMadness = new ArrayList();
         untypedMadness.Add("hello");
         untypedMadness.Add(true);

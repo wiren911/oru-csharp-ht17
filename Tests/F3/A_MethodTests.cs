@@ -17,7 +17,7 @@ public class MethodTests
         return a + b;
     }
     private bool OneLinerSyntaxMethod(bool value) => !value;
-    
+
     [TestMethod]
     public void calling_method()
     {
@@ -89,8 +89,36 @@ public class MethodTests
         int value;
         setIntToZeroWithOut(out value);
         Assert.AreEqual(0, value);
-                
+
         setIntToZeroWithOut(out var value2);
         Assert.AreEqual(0, value2);
     }
+
+    private void OverLoadingExample()
+    {
+    }
+    private bool OverLoadingExample(int value)
+    {
+        return value == 0;
+    }
+
+    [TestMethod]
+    public void overload()
+    {
+        OverLoadingExample();
+        var result = OverLoadingExample(0);
+    }
+
+    private void DefaultValue(bool value = false)
+    {
+
+    }
+
+    [TestMethod]
+    public void default_value_parameter()
+    {
+        DefaultValue();
+        DefaultValue(true);
+    }
+    
 }
