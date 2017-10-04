@@ -14,11 +14,12 @@ namespace F3Game
             var x = 0;
             var y = 0;
             var sum = 0;
+            var steps = 0;
 
 
             PrintGrid(a, x, y);
 
-            while (sum < 10)
+            while (sum < 20)
             {
                 var move = Console.ReadKey();
                 switch (move.Key)
@@ -42,12 +43,12 @@ namespace F3Game
                     default:
                         break;
                 }
-
+                steps++;
                 sum += a[y, x];
                 a[y, x] = 0;
                 Console.Clear();
                 PrintGrid(a, x, y);
-                Console.WriteLine("Sum: " + sum);
+                Console.WriteLine($"Sum: {sum}, Steps: {steps}, Average: {(sum/(decimal)steps)}");
             }
         }
 
