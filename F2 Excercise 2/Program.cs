@@ -10,6 +10,7 @@ namespace F2_Excercise_2
         /// <param name="args"></param>
         static void Main(string[] args)
         {
-            
+
+        }
     }
 }
