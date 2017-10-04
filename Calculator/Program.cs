@@ -26,10 +26,12 @@ namespace Calculator
                 }
             }
 
+            decimal fraction = max / (decimal)sum;
             Console.WriteLine($@"Inmatat: {sum}
 Roten ur: {Math.Sqrt(sum)}
 Upphöjt: {Math.Pow(sum, 2)}
-Max: {max}");
+Max: {max}
+Procent: {fraction.ToString("P")}");
             Console.ReadKey();
         }
     }
