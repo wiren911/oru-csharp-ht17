@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RovarSprak", "RovarSprak\RovarSprak.csproj", "{8F1ED001-6739-4822-AEDC-CF0FCC3188B7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Primtal", "Primtal\Primtal.csproj", "{37D9FE75-B0AE-4D6C-9F7D-5BEC54F1A970}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{8F1ED001-6739-4822-AEDC-CF0FCC3188B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8F1ED001-6739-4822-AEDC-CF0FCC3188B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8F1ED001-6739-4822-AEDC-CF0FCC3188B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37D9FE75-B0AE-4D6C-9F7D-5BEC54F1A970}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37D9FE75-B0AE-4D6C-9F7D-5BEC54F1A970}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37D9FE75-B0AE-4D6C-9F7D-5BEC54F1A970}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37D9FE75-B0AE-4D6C-9F7D-5BEC54F1A970}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -54,6 +60,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{2EC3CEB0-4611-456B-B525-357E842288F4} = {98D6C30D-44F3-48BF-91D9-627DD56FF5C7}
 		{8F1ED001-6739-4822-AEDC-CF0FCC3188B7} = {98D6C30D-44F3-48BF-91D9-627DD56FF5C7}
+		{37D9FE75-B0AE-4D6C-9F7D-5BEC54F1A970} = {98D6C30D-44F3-48BF-91D9-627DD56FF5C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F151B805-FE0B-4D93-A049-D78B82C23384}
