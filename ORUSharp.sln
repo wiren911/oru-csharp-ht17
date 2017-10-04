@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F2 Excercise 2", "F2 Excerc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F3 Excercise 1", "F3 Excercise 1\F3 Excercise 1.csproj", "{C7521ACA-A16F-4387-A5DA-723CD8BAD74B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solutions Excercises F2", "Solutions Excercises F2", "{98D6C30D-44F3-48BF-91D9-627DD56FF5C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{2EC3CEB0-4611-456B-B525-357E842288F4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,9 +37,16 @@ Global
 		{C7521ACA-A16F-4387-A5DA-723CD8BAD74B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7521ACA-A16F-4387-A5DA-723CD8BAD74B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7521ACA-A16F-4387-A5DA-723CD8BAD74B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EC3CEB0-4611-456B-B525-357E842288F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EC3CEB0-4611-456B-B525-357E842288F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EC3CEB0-4611-456B-B525-357E842288F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EC3CEB0-4611-456B-B525-357E842288F4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2EC3CEB0-4611-456B-B525-357E842288F4} = {98D6C30D-44F3-48BF-91D9-627DD56FF5C7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F151B805-FE0B-4D93-A049-D78B82C23384}
