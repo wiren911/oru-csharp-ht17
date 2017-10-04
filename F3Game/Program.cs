@@ -11,9 +11,12 @@ namespace F3Game
         static void Main(string[] args)
         {
             var a = GenerateArray();
-         
-            PrintGrid(a);
-            
+            var x = 0;
+            var y = 0;
+            var sum = 0;
+
+
+            PrintGrid(a, x, y);
         }
 
         private static int[,] GenerateArray()
@@ -31,13 +34,20 @@ namespace F3Game
             return a;
         }
 
-        private static void PrintGrid(int[,] a)
+        private static void PrintGrid(int[,] a, int x, int y)
         {
             for (int j = 0; j < a.GetLength(0); j++)
             {
                 for (int k = 0; k < a.GetLength(1); k++)
                 {
-                    Console.Write(a[j, k]);
+                    if (x == k && y == j)
+                    {
+                        Console.BackgroundColor = ConsoleColor.Red;
+                        Console.Write("X");
+                        Console.BackgroundColor = ConsoleColor.Black;
+                    }
+                    else
+                        Console.Write(a[j, k]);
                 }
                 Console.WriteLine();
             }
