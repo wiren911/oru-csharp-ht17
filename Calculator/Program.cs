@@ -22,7 +22,12 @@ namespace Calculator
             for (int i = 0; i < 10; i++)
             {
                 Console.WriteLine($"Enter mode: '{Modes.Single}', '{Modes.CommaDelimited}', '{Modes.SpaceDelimited}'");
-                Enum.TryParse<Modes>(Console.ReadLine(), out var mode);
+
+                string modeString = Console.ReadLine();
+                if (modeString == "quit")
+                    break;
+
+                Enum.TryParse<Modes>(modeString, out var mode);
 
                 Console.WriteLine("Enter value");
                 var input = Console.ReadLine();
