@@ -11,6 +11,9 @@ namespace F3Game
         static void Main(string[] args)
         {
             var a = GenerateArray();
+         
+            PrintGrid(a);
+            
         }
 
         private static int[,] GenerateArray()
@@ -28,6 +31,17 @@ namespace F3Game
             return a;
         }
 
+        private static void PrintGrid(int[,] a)
+        {
+            for (int j = 0; j < a.GetLength(0); j++)
+            {
+                for (int k = 0; k < a.GetLength(1); k++)
+                {
+                    Console.Write(a[j, k]);
+                }
+                Console.WriteLine();
+            }
+        }
 
     }
 }
