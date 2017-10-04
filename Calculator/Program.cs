@@ -17,54 +17,62 @@ namespace Calculator
         
         static void Main(string[] args)
         {
-            Console.WriteLine($"Enter mode: '{Modes.Single}', '{Modes.CommaDelimited}', '{Modes.SpaceDelimited}'");
-            Enum.TryParse<Modes>(Console.ReadLine(), out var mode);
+            Console.WriteLine("You are granted 10 calculations. Enjoy.");
 
-            Console.WriteLine("Enter value");
-            var input = Console.ReadLine();
-
-            var sum = 0;
-            var max = 0;
-
-            switch (mode)
+            for (int i = 0; i < 10; i++)
             {
-                case Modes.Single:
-                    sum = int.Parse(input);
-                    max = sum;
-                    break;
-                case Modes.CommaDelimited:
-                    foreach (var part in input.Split(','))
-                    {
-                        int value = int.Parse(part);
-                        sum += value;
-                        if (value > max)
-                        {
-                            max = value;
-                        }
-                    }
-                    break;
-                case Modes.SpaceDelimited:
-                    foreach (var part in input.Split(' '))
-                    {
-                        int value = int.Parse(part);
-                        sum += value;
-                        if (value > max)
-                        {
-                            max = value;
-                        }
-                    }
-                    break;
-                default:
-                    break;
-            }           
+                Console.WriteLine($"Enter mode: '{Modes.Single}', '{Modes.CommaDelimited}', '{Modes.SpaceDelimited}'");
+                Enum.TryParse<Modes>(Console.ReadLine(), out var mode);
 
-            decimal fraction = max / (decimal)sum;
-            Console.WriteLine($@"Inmatat: {sum}
+                Console.WriteLine("Enter value");
+                var input = Console.ReadLine();
+
+                var sum = 0;
+                var max = 0;
+
+                switch (mode)
+                {
+                    case Modes.Single:
+                        sum = int.Parse(input);
+                        max = sum;
+                        break;
+                    case Modes.CommaDelimited:
+                        foreach (var part in input.Split(','))
+                        {
+                            int value = int.Parse(part);
+                            sum += value;
+                            if (value > max)
+                            {
+                                max = value;
+                            }
+                        }
+                        break;
+                    case Modes.SpaceDelimited:
+                        foreach (var part in input.Split(' '))
+                        {
+                            int value = int.Parse(part);
+                            sum += value;
+                            if (value > max)
+                            {
+                                max = value;
+                            }
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
+                decimal fraction = max / (decimal)sum;
+                Console.WriteLine($@"Inmatat: {sum}
 Roten ur: {Math.Sqrt(sum)}
 Upphöjt: {Math.Pow(sum, 2)}
 Max: {max}
 Procent: {fraction.ToString("P")}");
-            Console.ReadKey();
+                
+
+                Console.WriteLine(i + 1 + " Calculations done.");
+            }
+            
         }
 
         /* 3a:
