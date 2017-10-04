@@ -8,23 +8,39 @@ namespace Calculator
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
-            var input = Console.ReadLine();
+            const string singleMode = "Single";
+            const string commaDelimited = "CommaDelimited";
 
-            var inputParts = input.Split(',');
+            Console.WriteLine($"Enter mode: '{singleMode}' or '{commaDelimited}'");
+            var mode = Console.ReadLine();
+
+            Console.WriteLine("Enter value");
+            var input = Console.ReadLine();
 
             var sum = 0;
             var max = 0;
-            foreach (var part in inputParts)
+
+            if (mode == singleMode)
             {
-                int value = int.Parse(part);
-                sum += value;
-                if(value > max)
-                {
-                    max = value;
-                }
+                sum = int.Parse(input);
+                max = sum;
             }
+            else
+            {
+                var inputParts = input.Split(',');
+                foreach (var part in inputParts)
+                {
+                    int value = int.Parse(part);
+                    sum += value;
+                    if (value > max)
+                    {
+                        max = value;
+                    }
+                }
+            }            
 
             decimal fraction = max / (decimal)sum;
             Console.WriteLine($@"Inmatat: {sum}
