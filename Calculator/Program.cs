@@ -44,5 +44,9 @@ Procent: {fraction.ToString("P")}");
          * Ljudinställning på mobilen: Ljud, Tyst, Vibration
          * Status på användare: Aktiv, Inaktiv, Borttagen, Blockerad
          */
+
+        /* 4a:
+         * Det är enklare att lagra ett heltal i databas/xml/json än en array
+         */
     }
 }
