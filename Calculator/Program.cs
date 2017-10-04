@@ -24,30 +24,37 @@ namespace Calculator
             var sum = 0;
             var max = 0;
 
-            if (mode == singleMode)
+            switch (mode)
             {
-                sum = int.Parse(input);
-                max = sum;
-            }
-            else
-            {
-                char split;
-                if (mode == commaDelimited)
-                    split = ',';
-                else
-                    split = ' ';
-
-                var inputParts = input.Split(split);
-                foreach (var part in inputParts)
-                {
-                    int value = int.Parse(part);
-                    sum += value;
-                    if (value > max)
+                case singleMode:
+                    sum = int.Parse(input);
+                    max = sum;
+                    break;
+                case commaDelimited:
+                    foreach (var part in input.Split(','))
                     {
-                        max = value;
+                        int value = int.Parse(part);
+                        sum += value;
+                        if (value > max)
+                        {
+                            max = value;
+                        }
                     }
-                }
-            }            
+                    break;
+                case spaceDelimited:
+                    foreach (var part in input.Split(' '))
+                    {
+                        int value = int.Parse(part);
+                        sum += value;
+                        if (value > max)
+                        {
+                            max = value;
+                        }
+                    }
+                    break;
+                default:
+                    break;
+            }           
 
             decimal fraction = max / (decimal)sum;
             Console.WriteLine($@"Inmatat: {sum}
