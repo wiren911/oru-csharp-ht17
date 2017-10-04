@@ -16,7 +16,18 @@ namespace F2_Excercise_1
         /// <param name="args"></param>
         static void Main(string[] args)
         {
+            var total = 0;
 
+            var input = "";
+            while (input != "quit")
+            {
+                input = Console.ReadLine();
+                var isInt = int.TryParse(input, out var inputAsInt);
+                if(isInt)
+                    total += inputAsInt;
+
+                Console.WriteLine(total);
+            }
         }
     }
 }
