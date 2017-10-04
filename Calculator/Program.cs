@@ -34,5 +34,15 @@ Max: {max}
 Procent: {fraction.ToString("P")}");
             Console.ReadKey();
         }
+
+        /* 3a:
+         * Anställda: Kan förändras, nya anställs eller gamla avskedas. Innehåller mer information än Namn och värde
+         * Adresser: Innehåller typiskt fler fält än endast namn, där varje enskild del är intressant i sig själv.
+         * Pris på kaffe: Värdet skulle gärna vara en float/decimal, men enums representeras av heltal.
+         * 
+         * 3b: 
+         * Ljudinställning på mobilen: Ljud, Tyst, Vibration
+         * Status på användare: Aktiv, Inaktiv, Borttagen, Blockerad
+         */
     }
 }
