@@ -11,11 +11,18 @@ namespace Calculator
         static void Main(string[] args)
         {
             var input = Console.ReadLine();
-            var inputAsInt = int.Parse(input);
 
-            Console.WriteLine($@"Inmatat: {inputAsInt}
-Roten ur: {Math.Sqrt(inputAsInt)}
-Upphöjt: {Math.Pow(inputAsInt, 2)}");
+            var inputParts = input.Split(',');
+
+            var sum = 0;
+            foreach (var part in inputParts)
+            {
+                sum += int.Parse(part);
+            }
+
+            Console.WriteLine($@"Inmatat: {sum}
+Roten ur: {Math.Sqrt(sum)}
+Upphöjt: {Math.Pow(sum, 2)}");
             Console.ReadKey();
         }
     }
