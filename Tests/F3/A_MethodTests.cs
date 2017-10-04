@@ -21,6 +21,8 @@ public class MethodTests
     [TestMethod]
     public void calling_method()
     {
+        var r = new Random().Next(1);
+        
         var sum = MethodWithArguments(1, 2);
         Assert.AreEqual(3, sum);
 
