@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
+    enum Modes
+    {
+        Single,
+        CommaDelimited,
+        SpaceDelimited
+    }
     class Program
     {
         
         static void Main(string[] args)
         {
-            const string singleMode = "Single";
-            const string commaDelimited = "CommaDelimited";
-            const string spaceDelimited = "SpaceDelimited";
-
-            Console.WriteLine($"Enter mode: '{singleMode}', '{commaDelimited}', '{spaceDelimited}'");
-            var mode = Console.ReadLine();
+            Console.WriteLine($"Enter mode: '{Modes.Single}', '{Modes.CommaDelimited}', '{Modes.SpaceDelimited}'");
+            Enum.TryParse<Modes>(Console.ReadLine(), out var mode);
 
             Console.WriteLine("Enter value");
             var input = Console.ReadLine();
@@ -26,11 +28,11 @@ namespace Calculator
 
             switch (mode)
             {
-                case singleMode:
+                case Modes.Single:
                     sum = int.Parse(input);
                     max = sum;
                     break;
-                case commaDelimited:
+                case Modes.CommaDelimited:
                     foreach (var part in input.Split(','))
                     {
                         int value = int.Parse(part);
@@ -41,7 +43,7 @@ namespace Calculator
                         }
                     }
                     break;
-                case spaceDelimited:
+                case Modes.SpaceDelimited:
                     foreach (var part in input.Split(' '))
                     {
                         int value = int.Parse(part);
