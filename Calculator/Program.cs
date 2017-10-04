@@ -13,8 +13,9 @@ namespace Calculator
         {
             const string singleMode = "Single";
             const string commaDelimited = "CommaDelimited";
+            const string spaceDelimited = "SpaceDelimited";
 
-            Console.WriteLine($"Enter mode: '{singleMode}' or '{commaDelimited}'");
+            Console.WriteLine($"Enter mode: '{singleMode}', '{commaDelimited}', '{spaceDelimited}'");
             var mode = Console.ReadLine();
 
             Console.WriteLine("Enter value");
@@ -30,7 +31,13 @@ namespace Calculator
             }
             else
             {
-                var inputParts = input.Split(',');
+                char split;
+                if (mode == commaDelimited)
+                    split = ',';
+                else
+                    split = ' ';
+
+                var inputParts = input.Split(split);
                 foreach (var part in inputParts)
                 {
                     int value = int.Parse(part);
