@@ -31,15 +31,31 @@ namespace F3Method
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var bok = new Bok {
-                Author = textBox1.Text,
-                Title = textBox2.Text,
-                AuthoringDate = dateTimePicker1.Value
-            };
-            enteredBooks.Add(bok);
+            try
+            {
+                ValidateLength(textBox1.Text, 5);
+                ValidateLength(textBox2.Text, 10);
+                var bok = new Bok
+                {
+                    Author = textBox1.Text,
+                    Title = textBox2.Text,
+                    AuthoringDate = dateTimePicker1.Value
+                };
+                enteredBooks.Add(bok);
 
-            label1.Text = bok.Title;
-            RedrawListBox();
+                label1.Text = bok.Title;
+                RedrawListBox();
+            }
+            catch (ApplicationException exception)
+            {
+                MessageBox.Show(exception.Message);
+            }
+        }
+
+        private void ValidateLength(string text, int v)
+        {
+            if (text.Length < v)
+                throw new ApplicationException($"{text} är för kort, {v} krävs.");
         }
 
         private void RedrawListBox()
