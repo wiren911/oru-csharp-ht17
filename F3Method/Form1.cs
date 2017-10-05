@@ -24,12 +24,17 @@ namespace F3Method
             enteredStrings.Add(enteredString);
 
             label1.Text = enteredString;
+            RedrawListBox();
+        }
+
+        private void RedrawListBox()
+        {
             listBox1.Items.Clear();
 
             foreach (var item in enteredStrings)
             {
                 listBox1.Items.Add(item);
-            }            
+            }
         }
 
         private string ConcatStrings(params string[] strings)
@@ -45,7 +50,12 @@ namespace F3Method
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-
+            var items = listBox1.SelectedItems;
+            foreach (var item in items)
+            {
+                enteredStrings.Remove(item.ToString());
+            }
+            RedrawListBox();
         }
     }
 }
