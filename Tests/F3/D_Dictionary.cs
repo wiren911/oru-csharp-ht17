@@ -9,6 +9,7 @@ public class DictionaryTest
     public void dictionary()
     {
         var days = new Dictionary<string, DateTime>();
+        
         days["Imorgon"] = DateTime.Today.AddDays(1);
         days.Add("Igår", DateTime.Today.AddDays(-1));
         days.Add("Idag", DateTime.Today);        

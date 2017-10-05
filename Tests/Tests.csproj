@@ -70,6 +70,7 @@
     <Compile Include="F2\K_LoopsTests.cs" />
     <Compile Include="F2\L_ScopeTests.cs" />
     <None Include="F2\README.md" />
+    <None Include="F3\_Agenda.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

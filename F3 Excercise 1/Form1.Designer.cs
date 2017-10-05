@@ -32,11 +32,13 @@
             this.txtSalary = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.lblSummary = new System.Windows.Forms.Label();
+            this.lstEmployees = new System.Windows.Forms.ListBox();
+            this.btnRemove = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(510, 44);
+            this.btnAdd.Location = new System.Drawing.Point(466, 12);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(95, 23);
             this.btnAdd.TabIndex = 0;
@@ -46,7 +48,7 @@
             // 
             // txtSalary
             // 
-            this.txtSalary.Location = new System.Drawing.Point(278, 46);
+            this.txtSalary.Location = new System.Drawing.Point(326, 15);
             this.txtSalary.Name = "txtSalary";
             this.txtSalary.Size = new System.Drawing.Size(100, 20);
             this.txtSalary.TabIndex = 1;
@@ -54,7 +56,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(143, 44);
+            this.txtName.Location = new System.Drawing.Point(197, 15);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(100, 20);
             this.txtName.TabIndex = 2;
@@ -68,11 +70,31 @@
             this.lblSummary.Size = new System.Drawing.Size(0, 13);
             this.lblSummary.TabIndex = 4;
             // 
+            // lstEmployees
+            // 
+            this.lstEmployees.FormattingEnabled = true;
+            this.lstEmployees.Location = new System.Drawing.Point(131, 71);
+            this.lstEmployees.Name = "lstEmployees";
+            this.lstEmployees.Size = new System.Drawing.Size(120, 95);
+            this.lstEmployees.TabIndex = 5;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(176, 172);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.TabIndex = 6;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(618, 280);
+            this.Controls.Add(this.btnRemove);
+            this.Controls.Add(this.lstEmployees);
             this.Controls.Add(this.lblSummary);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.txtSalary);
@@ -90,6 +112,8 @@
         private System.Windows.Forms.TextBox txtSalary;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblSummary;
+        private System.Windows.Forms.ListBox lstEmployees;
+        private System.Windows.Forms.Button btnRemove;
     }
 }
 

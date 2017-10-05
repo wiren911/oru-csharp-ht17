@@ -12,12 +12,12 @@ public class StructsTests
     {
         var student = new Student();
         student.Age = 1;
-        SetName(student);
+        SetAge(student);
 
         Assert.AreEqual(1, student.Age);
     }
 
-    private void SetName(Student student)
+    private void SetAge(Student student)
     {
         student.Age = 10;
     }
