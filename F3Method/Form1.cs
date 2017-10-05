@@ -10,9 +10,18 @@ using System.Windows.Forms;
 
 namespace F3Method
 {
+    struct Bok
+    {
+        public string Author;
+        public string Title;
+        public override string ToString()
+        {
+            return Author;
+        }
+    }
     public partial class Form1 : Form
     {
-        private List<string> enteredStrings = new List<string>();
+        private List<Bok> enteredBooks = new List<Bok>();
         public Form1()
         {
             InitializeComponent();
@@ -20,10 +29,10 @@ namespace F3Method
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var enteredString = ConcatStrings(textBox1.Text, textBox2.Text);
-            enteredStrings.Add(enteredString);
+            var bok = new Bok { Author = textBox1.Text, Title = textBox2.Text };
+            enteredBooks.Add(bok);
 
-            label1.Text = enteredString;
+            label1.Text = bok.Title;
             RedrawListBox();
         }
 
@@ -31,7 +40,7 @@ namespace F3Method
         {
             listBox1.Items.Clear();
 
-            foreach (var item in enteredStrings)
+            foreach (var item in enteredBooks)
             {
                 listBox1.Items.Add(item);
             }
@@ -50,10 +59,9 @@ namespace F3Method
 
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            var items = listBox1.SelectedItems;
-            foreach (var item in items)
+            foreach (var item in listBox1.SelectedItems)
             {
-                enteredStrings.Remove(item.ToString());
+                enteredBooks.Remove((Bok)item);
             }
             RedrawListBox();
         }
