@@ -14,9 +14,11 @@ namespace F3Method
     {
         public string Author;
         public string Title;
+        public DateTime AuthoringDate;
+
         public override string ToString()
         {
-            return Author;
+            return $"{AuthoringDate}: {Author}: {Title}";
         }
     }
     public partial class Form1 : Form
@@ -29,7 +31,11 @@ namespace F3Method
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var bok = new Bok { Author = textBox1.Text, Title = textBox2.Text };
+            var bok = new Bok {
+                Author = textBox1.Text,
+                Title = textBox2.Text,
+                AuthoringDate = dateTimePicker1.Value
+            };
             enteredBooks.Add(bok);
 
             label1.Text = bok.Title;
