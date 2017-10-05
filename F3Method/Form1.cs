@@ -22,9 +22,9 @@ namespace F3Method
             label1.Text = ConcatStrings(textBox1.Text, textBox2.Text);
         }
 
-        private string ConcatStrings(string a, string b)
+        private string ConcatStrings(string a, string b, string c = "")
         {
-            return a + b;
+            return a + b + c;
         }
     }
 }
