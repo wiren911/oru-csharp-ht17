@@ -19,7 +19,12 @@ namespace F3Method
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text = textBox1.Text + textBox2.Text;
+            label1.Text = ConcatStrings(textBox1.Text, textBox2.Text);
+        }
+
+        private string ConcatStrings(string a, string b)
+        {
+            return a + b;
         }
     }
 }
