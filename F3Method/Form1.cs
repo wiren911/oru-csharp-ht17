@@ -30,7 +30,7 @@ namespace F3Method
         private string ConcatStrings(out DateTime date, params string[] strings)
         {
             date = DateTime.Now;
-            return ConcatStrings(strings)
+            return ConcatStrings(strings);
         }
     }
 }
