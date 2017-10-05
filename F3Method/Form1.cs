@@ -26,5 +26,11 @@ namespace F3Method
         {
             return string.Join("", strings);
         }
+
+        private string ConcatStrings(out DateTime date, params string[] strings)
+        {
+            date = DateTime.Now;
+            return ConcatStrings(strings)
+        }
     }
 }
