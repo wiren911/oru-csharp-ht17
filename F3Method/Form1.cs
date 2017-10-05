@@ -12,6 +12,7 @@ namespace F3Method
 {
     public partial class Form1 : Form
     {
+        private List<string> enteredStrings = new List<string>();
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +20,16 @@ namespace F3Method
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label1.Text = ConcatStrings(textBox1.Text, textBox2.Text);
+            var enteredString = ConcatStrings(textBox1.Text, textBox2.Text);
+            enteredStrings.Add(enteredString);
+
+            label1.Text = enteredString;
+            listBox1.Items.Clear();
+
+            foreach (var item in enteredStrings)
+            {
+                listBox1.Items.Add(item);
+            }            
         }
 
         private string ConcatStrings(params string[] strings)
@@ -31,6 +41,11 @@ namespace F3Method
         {
             date = DateTime.Now;
             return ConcatStrings(strings);
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
