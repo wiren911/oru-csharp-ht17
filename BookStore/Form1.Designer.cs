@@ -37,6 +37,7 @@
             this.btnBuy = new System.Windows.Forms.Button();
             this.lstBoughtBooks = new System.Windows.Forms.ListBox();
             this.lblSum = new System.Windows.Forms.Label();
+            this.btnRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numInStock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -113,11 +114,22 @@
             this.lblSum.TabIndex = 8;
             this.lblSum.Text = "label1";
             // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(342, 243);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(75, 23);
+            this.btnRemove.TabIndex = 9;
+            this.btnRemove.Text = "Remove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 346);
+            this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.lblSum);
             this.Controls.Add(this.lstBoughtBooks);
             this.Controls.Add(this.btnBuy);
@@ -146,6 +158,7 @@
         private System.Windows.Forms.Button btnBuy;
         private System.Windows.Forms.ListBox lstBoughtBooks;
         private System.Windows.Forms.Label lblSum;
+        private System.Windows.Forms.Button btnRemove;
     }
 }
 

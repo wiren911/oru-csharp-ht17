@@ -79,6 +79,11 @@ namespace BookStore
             }
 
             RedrawBoughtBooks();
+            RedrawSum();
+        }
+
+        private void RedrawSum()
+        {
             var sum = CalculateSum();
             lblSum.Text = sum.ToString("C");
         }
@@ -120,6 +125,23 @@ namespace BookStore
             {
                 lstBoughtBooks.Items.Add(row);
             }
+        }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            foreach (var item in lstBoughtBooks.SelectedItems)
+            {
+                var row = (CartRow)item;
+                cartRows.Remove(row);
+                if (row.Count > 1)
+                {
+                    row.Count--;
+                    cartRows.Add(row);
+                }
+            }
+            RedrawBoughtBooks();
+            RedrawSum();
+
         }
     }
 }
