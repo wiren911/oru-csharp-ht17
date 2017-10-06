@@ -33,6 +33,7 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.numInStock = new System.Windows.Forms.NumericUpDown();
             this.btnAddBook = new System.Windows.Forms.Button();
+            this.lstBooksInStore = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.numInStock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,11 +75,20 @@
             this.btnAddBook.UseVisualStyleBackColor = true;
             this.btnAddBook.Click += new System.EventHandler(this.btnAdd_click);
             // 
+            // lstBooksInStore
+            // 
+            this.lstBooksInStore.FormattingEnabled = true;
+            this.lstBooksInStore.Location = new System.Drawing.Point(12, 119);
+            this.lstBooksInStore.Name = "lstBooksInStore";
+            this.lstBooksInStore.Size = new System.Drawing.Size(100, 95);
+            this.lstBooksInStore.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 346);
+            this.Controls.Add(this.lstBooksInStore);
             this.Controls.Add(this.btnAddBook);
             this.Controls.Add(this.numInStock);
             this.Controls.Add(this.txtPrice);
@@ -99,6 +109,7 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.NumericUpDown numInStock;
         private System.Windows.Forms.Button btnAddBook;
+        private System.Windows.Forms.ListBox lstBooksInStore;
     }
 }
 

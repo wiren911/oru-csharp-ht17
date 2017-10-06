@@ -15,6 +15,11 @@ namespace BookStore
         public string Title;
         public string Author;
         public decimal Price;
+
+        public override string ToString()
+        {
+            return $"Author: {Author}, Title: {Title}, Price: {Price}";
+        }
     }
     public partial class Form1 : Form
     {
@@ -44,12 +49,23 @@ namespace BookStore
                 };
 
                 booksInStore.Add(book);
+
+                RedrawListBox();
             }
             catch (ApplicationException exception)
             {
                 MessageBox.Show(exception.Message, "Woops");
             }
             
+        }
+
+        private void RedrawListBox()
+        {
+            lstBooksInStore.Items.Clear();
+                foreach (var item in booksInStore)
+            {
+                lstBooksInStore.Items.Add(item);
+            }
         }
 
         private void ValidateIsTrue(bool isPrice, string message)
