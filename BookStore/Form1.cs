@@ -23,7 +23,7 @@ namespace BookStore
             var title = txtTitle.Text;
             var author = txtAuthor.Text;
             var isPrice = decimal.TryParse(txtPrice.Text, out var price);
-
+            var amount = numInStock.Value;
             try
             {
                 ValidateLength(title, 5);
@@ -34,12 +34,13 @@ namespace BookStore
                 {
                     Author = author,
                     Title = title,
-                    Price = price
+                    Price = price,
+                    AmountInStore = (int)amount
                 };
 
                 booksInStore.Add(book);
 
-                RedrawListBox();
+                RedrawAvailableBooks();
             }
             catch (ApplicationException exception)
             {
@@ -48,7 +49,7 @@ namespace BookStore
 
         }
 
-        private void RedrawListBox()
+        private void RedrawAvailableBooks()
         {
             lstBooksInStore.Items.Clear();
             foreach (var item in booksInStore)
@@ -73,13 +74,35 @@ namespace BookStore
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-            foreach (var item in lstBooksInStore.SelectedItems)
+            try
             {
-                AddBookOrUpdateCount(item);
-            }
+                foreach (var item in lstBooksInStore.SelectedItems)
+                {
+                    var book = (Book)item;
+                    ReduceAmountInStoreForBook(book);
+                    AddBookOrUpdateCount(book);
 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
+            RedrawAvailableBooks();
             RedrawBoughtBooks();
             RedrawSum();
+        }
+
+        private void ReduceAmountInStoreForBook(Book book)
+        {
+            if (book.AmountInStore == 0)
+                throw new ApplicationException("Out of stock!");
+
+
+            booksInStore.Remove(book);
+            book.AmountInStore--;
+            booksInStore.Add(book);
         }
 
         private void RedrawSum()
@@ -98,9 +121,9 @@ namespace BookStore
             return sum;
         }
 
-        private void AddBookOrUpdateCount(object item)
+        private void AddBookOrUpdateCount(Book book)
         {
-            var book = (Book)item;
+            
             var newList = new List<CartRow>();
             var added = false;
             for (int i = 0; i < cartRows.Count; i++)
