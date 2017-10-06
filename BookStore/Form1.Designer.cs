@@ -36,6 +36,7 @@
             this.lstBooksInStore = new System.Windows.Forms.ListBox();
             this.btnBuy = new System.Windows.Forms.Button();
             this.lstBoughtBooks = new System.Windows.Forms.ListBox();
+            this.lblSum = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numInStock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -103,11 +104,21 @@
             this.lstBoughtBooks.Size = new System.Drawing.Size(299, 95);
             this.lstBoughtBooks.TabIndex = 7;
             // 
+            // lblSum
+            // 
+            this.lblSum.AutoSize = true;
+            this.lblSum.Location = new System.Drawing.Point(166, 240);
+            this.lblSum.Name = "lblSum";
+            this.lblSum.Size = new System.Drawing.Size(35, 13);
+            this.lblSum.TabIndex = 8;
+            this.lblSum.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 346);
+            this.Controls.Add(this.lblSum);
             this.Controls.Add(this.lstBoughtBooks);
             this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.lstBooksInStore);
@@ -134,6 +145,7 @@
         private System.Windows.Forms.ListBox lstBooksInStore;
         private System.Windows.Forms.Button btnBuy;
         private System.Windows.Forms.ListBox lstBoughtBooks;
+        private System.Windows.Forms.Label lblSum;
     }
 }
 

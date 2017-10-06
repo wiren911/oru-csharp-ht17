@@ -75,25 +75,42 @@ namespace BookStore
         {
             foreach (var item in lstBooksInStore.SelectedItems)
             {
-                var book = (Book)item;
-                var newList = new List<CartRow>();
-                var added = false;
-                for (int i = 0; i < cartRows.Count; i++)
-                {
-                    var cartRow = cartRows[i];
-                    if (cartRow.Book.Author == book.Author && cartRow.Book.Title == book.Title)
-                    {
-                        added = true;
-                        newList.Add(new CartRow { Book = book, Count = cartRow.Count + 1 });
-                        break;
-                    }
-                }
-                if (!added)
-                    newList.Add(new CartRow { Book = book, Count = 1 });
-                cartRows = newList;
+                AddBookOrUpdateCount(item);
             }
 
             RedrawBoughtBooks();
+            var sum = CalculateSum();
+            lblSum.Text = sum.ToString("C");
+        }
+
+        private decimal CalculateSum()
+        {
+            decimal sum = 0;
+            foreach (var row in cartRows)
+            {
+                sum += (row.Count * row.Book.Price);
+            }
+            return sum;
+        }
+
+        private void AddBookOrUpdateCount(object item)
+        {
+            var book = (Book)item;
+            var newList = new List<CartRow>();
+            var added = false;
+            for (int i = 0; i < cartRows.Count; i++)
+            {
+                var cartRow = cartRows[i];
+                if (cartRow.Book.Author == book.Author && cartRow.Book.Title == book.Title)
+                {
+                    added = true;
+                    newList.Add(new CartRow { Book = book, Count = cartRow.Count + 1 });
+                    break;
+                }
+            }
+            if (!added)
+                newList.Add(new CartRow { Book = book, Count = 1 });
+            cartRows = newList;
         }
 
         private void RedrawBoughtBooks()
