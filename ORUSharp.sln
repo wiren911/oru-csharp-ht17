@@ -25,6 +25,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F3Game", "F3Game\F3Game.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F3Method", "F3Method\F3Method.csproj", "{1817CB3A-3A1C-4AAD-975D-E64508D31CC6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solutions Pairprogramming 2", "Solutions Pairprogramming 2", "{BD66927E-BACF-490F-B833-9EFAC302669E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardGame", "CardGame\CardGame.csproj", "{E1185EB7-CED2-416C-A0D7-B94AB43C5426}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +71,10 @@ Global
 		{1817CB3A-3A1C-4AAD-975D-E64508D31CC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1817CB3A-3A1C-4AAD-975D-E64508D31CC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1817CB3A-3A1C-4AAD-975D-E64508D31CC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1185EB7-CED2-416C-A0D7-B94AB43C5426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1185EB7-CED2-416C-A0D7-B94AB43C5426}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1185EB7-CED2-416C-A0D7-B94AB43C5426}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1185EB7-CED2-416C-A0D7-B94AB43C5426}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -77,6 +85,7 @@ Global
 		{37D9FE75-B0AE-4D6C-9F7D-5BEC54F1A970} = {98D6C30D-44F3-48BF-91D9-627DD56FF5C7}
 		{31F14043-E808-4A9E-ABE1-FE8987647B1A} = {5B6C9F14-0062-404E-9BD2-3F4FBFAFCB3F}
 		{1817CB3A-3A1C-4AAD-975D-E64508D31CC6} = {5B6C9F14-0062-404E-9BD2-3F4FBFAFCB3F}
+		{E1185EB7-CED2-416C-A0D7-B94AB43C5426} = {BD66927E-BACF-490F-B833-9EFAC302669E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F151B805-FE0B-4D93-A049-D78B82C23384}
