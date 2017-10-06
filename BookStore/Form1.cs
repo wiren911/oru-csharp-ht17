@@ -18,6 +18,7 @@ namespace BookStore
     }
     public partial class Form1 : Form
     {
+        private List<Book> booksInStore = new List<Book>();
         public Form1()
         {
             InitializeComponent();
@@ -34,6 +35,15 @@ namespace BookStore
                 ValidateLength(title, 5);
                 ValidateLength(author, 10);
                 ValidateIsTrue(isPrice, "Inte ett giltigt pris");
+
+                var book = new Book
+                {
+                    Author = author,
+                    Title = title,
+                    Price = price
+                };
+
+                booksInStore.Add(book);
             }
             catch (ApplicationException exception)
             {
