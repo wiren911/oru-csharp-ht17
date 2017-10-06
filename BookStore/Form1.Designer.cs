@@ -34,6 +34,8 @@
             this.numInStock = new System.Windows.Forms.NumericUpDown();
             this.btnAddBook = new System.Windows.Forms.Button();
             this.lstBooksInStore = new System.Windows.Forms.ListBox();
+            this.btnBuy = new System.Windows.Forms.Button();
+            this.lstBoughtBooks = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.numInStock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,16 +80,36 @@
             // lstBooksInStore
             // 
             this.lstBooksInStore.FormattingEnabled = true;
-            this.lstBooksInStore.Location = new System.Drawing.Point(12, 119);
+            this.lstBooksInStore.Location = new System.Drawing.Point(118, 12);
             this.lstBooksInStore.Name = "lstBooksInStore";
-            this.lstBooksInStore.Size = new System.Drawing.Size(100, 95);
+            this.lstBooksInStore.Size = new System.Drawing.Size(299, 95);
             this.lstBooksInStore.TabIndex = 5;
+            // 
+            // btnBuy
+            // 
+            this.btnBuy.Location = new System.Drawing.Point(218, 113);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(100, 23);
+            this.btnBuy.TabIndex = 6;
+            this.btnBuy.Text = "Buy";
+            this.btnBuy.UseVisualStyleBackColor = true;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
+            // 
+            // lstBoughtBooks
+            // 
+            this.lstBoughtBooks.FormattingEnabled = true;
+            this.lstBoughtBooks.Location = new System.Drawing.Point(118, 142);
+            this.lstBoughtBooks.Name = "lstBoughtBooks";
+            this.lstBoughtBooks.Size = new System.Drawing.Size(299, 95);
+            this.lstBoughtBooks.TabIndex = 7;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 346);
+            this.Controls.Add(this.lstBoughtBooks);
+            this.Controls.Add(this.btnBuy);
             this.Controls.Add(this.lstBooksInStore);
             this.Controls.Add(this.btnAddBook);
             this.Controls.Add(this.numInStock);
@@ -110,6 +132,8 @@
         private System.Windows.Forms.NumericUpDown numInStock;
         private System.Windows.Forms.Button btnAddBook;
         private System.Windows.Forms.ListBox lstBooksInStore;
+        private System.Windows.Forms.Button btnBuy;
+        private System.Windows.Forms.ListBox lstBoughtBooks;
     }
 }
 

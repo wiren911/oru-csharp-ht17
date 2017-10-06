@@ -10,17 +10,6 @@ using System.Windows.Forms;
 
 namespace BookStore
 {
-    struct Book
-    {
-        public string Title;
-        public string Author;
-        public decimal Price;
-
-        public override string ToString()
-        {
-            return $"Author: {Author}, Title: {Title}, Price: {Price}";
-        }
-    }
     public partial class Form1 : Form
     {
         private List<Book> booksInStore = new List<Book>();
@@ -56,13 +45,13 @@ namespace BookStore
             {
                 MessageBox.Show(exception.Message, "Woops");
             }
-            
+
         }
 
         private void RedrawListBox()
         {
             lstBooksInStore.Items.Clear();
-                foreach (var item in booksInStore)
+            foreach (var item in booksInStore)
             {
                 lstBooksInStore.Items.Add(item);
             }
@@ -78,6 +67,42 @@ namespace BookStore
         {
             if (input.Length < length)
                 throw new ApplicationException("För kort.");
+        }
+
+        private List<CartRow> cartRows = new List<CartRow>();
+
+        private void btnBuy_Click(object sender, EventArgs e)
+        {
+            foreach (var item in lstBooksInStore.SelectedItems)
+            {
+                var book = (Book)item;
+                var newList = new List<CartRow>();
+                var added = false;
+                for (int i = 0; i < cartRows.Count; i++)
+                {
+                    var cartRow = cartRows[i];
+                    if (cartRow.Book.Author == book.Author && cartRow.Book.Title == book.Title)
+                    {
+                        added = true;
+                        newList.Add(new CartRow { Book = book, Count = cartRow.Count + 1 });
+                        break;
+                    }
+                }
+                if (!added)
+                    newList.Add(new CartRow { Book = book, Count = 1 });
+                cartRows = newList;
+            }
+
+            RedrawBoughtBooks();
+        }
+
+        private void RedrawBoughtBooks()
+        {
+            lstBoughtBooks.Items.Clear();
+            foreach (var row in cartRows)
+            {
+                lstBoughtBooks.Items.Add(row);
+            }
         }
     }
 }
