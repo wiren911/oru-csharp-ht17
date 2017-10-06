@@ -29,9 +29,17 @@ namespace BookStore
             var author = txtAuthor.Text;
             var isPrice = decimal.TryParse(txtPrice.Text, out var price);
 
-            ValidateLength(title, 5);
-            ValidateLength(author, 10);
-            ValidateIsTrue(isPrice, "Inte ett giltigt pris");
+            try
+            {
+                ValidateLength(title, 5);
+                ValidateLength(author, 10);
+                ValidateIsTrue(isPrice, "Inte ett giltigt pris");
+            }
+            catch (ApplicationException exception)
+            {
+                MessageBox.Show(exception.Message, "Woops");
+            }
+            
         }
 
         private void ValidateIsTrue(bool isPrice, string message)
